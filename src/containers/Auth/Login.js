@@ -4,7 +4,7 @@ import { push } from "connected-react-router";
 import * as actions from "../../store/actions";
 import "./Login.scss";
 import { FormattedMessage } from "react-intl";
-
+import { handleLogin } from "../../services/userService";
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -12,6 +12,7 @@ class Login extends Component {
             username: "",
             password: "",
             isShowPassword: false,
+            errMessage: "",
         };
     }
     handleOnChangeUsername = (event) => {
@@ -24,9 +25,36 @@ class Login extends Component {
             password: event.target.value,
         });
     };
-    handleLogin = () => {
+    handleLogin = async () => {
+        this.setState({
+            errMessage: "",
+        });
         console.log(`username: ${this.state.username}`);
         console.log(`password: ${this.state.password}`);
+        try {
+            const data = await handleLogin(
+                this.state.username,
+                this.state.password
+            );
+            if (data && data.errCode !== 0) {
+                this.setState({
+                    errMessage: data.errMessage,
+                });
+            }
+            if (data && data.errCode === 0) {
+                this.props.userLoginSuccess(data.user);
+                console.log("Log in successfully");
+            }
+        } catch (error) {
+            console.log(error.response.data);
+            if (error.response) {
+                if (error.response.data) {
+                    this.setState({
+                        errMessage: error.response.data.message,
+                    });
+                }
+            }
+        }
     };
     handleShowHidePassword = () => {
         this.setState({
@@ -82,6 +110,9 @@ class Login extends Component {
                                 </span>
                             </div>
                         </div>
+                        <div className="col-12" style={{ color: "red" }}>
+                            {this.state.errMessage}
+                        </div>
                         <div className="col-12">
                             <button
                                 className="btn-login"
@@ -122,9 +153,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         navigate: (path) => dispatch(push(path)),
-        adminLoginSuccess: (adminInfo) =>
-            dispatch(actions.adminLoginSuccess(adminInfo)),
-        adminLoginFail: () => dispatch(actions.adminLoginFail()),
+        // userLoginFail: () => dispatch(actions.adminLoginFail()),
+        userLoginSuccess: (userInfo) =>
+            dispatch(actions.userLoginSuccess(userInfo)),
     };
 };
 

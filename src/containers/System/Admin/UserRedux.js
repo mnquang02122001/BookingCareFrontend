@@ -43,7 +43,7 @@ class UserRedux extends Component {
                 genderArr: arrGenders,
                 gender:
                     arrGenders && arrGenders.length > 0
-                        ? arrGenders[0].key
+                        ? arrGenders[0].keyMap
                         : "",
             });
         }
@@ -53,7 +53,7 @@ class UserRedux extends Component {
                 positionArr: arrPositions,
                 position:
                     arrPositions && arrPositions.length > 0
-                        ? arrPositions[0].key
+                        ? arrPositions[0].keyMap
                         : "",
             });
         }
@@ -61,7 +61,7 @@ class UserRedux extends Component {
             let arrRoles = this.props.roleRedux;
             this.setState({
                 roleArr: arrRoles,
-                role: arrRoles && arrRoles.length > 0 ? arrRoles[0].key : "",
+                role: arrRoles && arrRoles.length > 0 ? arrRoles[0].keyMap : "",
             });
         }
         if (prevProps.listUsers !== this.props.listUsers) {
@@ -77,13 +77,13 @@ class UserRedux extends Component {
                 address: "",
                 gender:
                     arrGenders && arrGenders.length > 0
-                        ? arrGenders[0].key
+                        ? arrGenders[0].keyMap
                         : "",
                 position:
                     arrPositions && arrPositions.length > 0
-                        ? arrPositions[0].key
+                        ? arrPositions[0].keyMap
                         : "",
-                role: arrRoles && arrRoles.length > 0 ? arrRoles[0].key : "",
+                role: arrRoles && arrRoles.length > 0 ? arrRoles[0].keyMap : "",
                 avatar: "",
                 previewImgURL: "",
                 action: CRUD_ACTIONS.CREATE,
@@ -156,7 +156,6 @@ class UserRedux extends Component {
         for (let i = 0; i < arrCheck.length; i++) {
             if (!this.state[arrCheck[i]]) {
                 isValid = false;
-                console.log(arrCheck[i]);
                 alert("This input requires: " + arrCheck[i]);
                 break;
             }
@@ -172,9 +171,7 @@ class UserRedux extends Component {
         let imageBase64 = "";
         if (user.image) {
             imageBase64 = new Buffer(user.image, "base64").toString("binary");
-            console.log(user.image);
         }
-        console.log(imageBase64);
         this.setState({
             userEditId: user.id,
             email: user.email,
@@ -317,7 +314,7 @@ class UserRedux extends Component {
                                             return (
                                                 <option
                                                     key={index}
-                                                    value={item.key}
+                                                    value={item.keyMap}
                                                 >
                                                     {language === LANGUAGES.VI
                                                         ? item.valueVi
@@ -344,7 +341,7 @@ class UserRedux extends Component {
                                             return (
                                                 <option
                                                     key={index}
-                                                    value={item.key}
+                                                    value={item.keyMap}
                                                 >
                                                     {language === LANGUAGES.VI
                                                         ? item.valueVi
@@ -371,7 +368,7 @@ class UserRedux extends Component {
                                             return (
                                                 <option
                                                     key={index}
-                                                    value={item.key}
+                                                    value={item.keyMap}
                                                 >
                                                     {language === LANGUAGES.VI
                                                         ? item.valueVi

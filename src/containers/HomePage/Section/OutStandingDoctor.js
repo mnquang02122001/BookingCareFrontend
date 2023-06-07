@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import * as actions from "../../../store/actions";
 import { LANGUAGES } from "../../../utils";
 import { FormattedMessage } from "react-intl";
+import { withRouter } from "react-router-dom";
 class OutStandingDoctor extends Component {
     constructor(props) {
         super(props);
@@ -14,6 +15,9 @@ class OutStandingDoctor extends Component {
     componentDidMount() {
         this.props.loadTopDoctors();
     }
+    handleViewDetailDoctor = (doctor) => {
+        console.log("view info doctor: ", doctor);
+    };
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevProps.topDoctorsRedux !== this.props.topDoctorsRedux) {
             this.setState({
@@ -21,6 +25,9 @@ class OutStandingDoctor extends Component {
             });
         }
     }
+    handleViewDetailDoctor = (doctor) => {
+        this.props.history.push(`/detail-doctor/${doctor.id}`);
+    };
     render() {
         console.log("check props doctor: ", this.props.topDoctorsRedux);
         let { language } = this.props;
@@ -54,6 +61,11 @@ class OutStandingDoctor extends Component {
                                         <div
                                             className="section-customize"
                                             key={index}
+                                            onClick={() =>
+                                                this.handleViewDetailDoctor(
+                                                    item
+                                                )
+                                            }
                                         >
                                             <div className="customize-border">
                                                 <div className="outer-bg">
@@ -100,4 +112,6 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OutStandingDoctor);
+export default withRouter(
+    connect(mapStateToProps, mapDispatchToProps)(OutStandingDoctor)
+);

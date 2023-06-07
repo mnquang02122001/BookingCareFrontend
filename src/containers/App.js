@@ -4,19 +4,18 @@ import { Route, Switch } from "react-router-dom";
 import { ConnectedRouter as Router } from "connected-react-router";
 import { history } from "../redux";
 import { ToastContainer } from "react-toastify";
-
 import {
     userIsAuthenticated,
     userIsNotAuthenticated,
 } from "../hoc/authentication";
-
 import { path } from "../utils";
-
 import Home from "../routes/Home";
 import Login from "./Auth/Login";
 import System from "../routes/System";
 import HomePage from "./HomePage/HomePage";
 import CustomScrollbars from "../components/CustomScrollbars";
+import DetailDoctor from "./Patient/Doctor/DetailDoctor";
+import Doctor from "../routes/Doctor";
 class App extends Component {
     handlePersistorState = () => {
         const { persistor } = this.props;
@@ -62,8 +61,12 @@ class App extends Component {
                                         component={userIsAuthenticated(System)}
                                     />
                                     <Route
-                                        path={path.HOMEPAGE}
-                                        component={HomePage}
+                                        path={"/doctor"}
+                                        component={userIsAuthenticated(Doctor)}
+                                    />
+                                    <Route
+                                        path={path.DETAIL_DOCTOR}
+                                        component={DetailDoctor}
                                     />
                                 </Switch>
                             </CustomScrollbars>

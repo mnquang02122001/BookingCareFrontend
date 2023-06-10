@@ -17,7 +17,7 @@ class ManageDoctor extends Component {
         this.state = {
             contentMarkdown: "",
             contentHTML: "",
-            selectedDoctor: "",
+            selectedDoctor: {},
             description: "",
             listDoctors: [],
             hasOldData: false,

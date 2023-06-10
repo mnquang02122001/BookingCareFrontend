@@ -15,9 +15,6 @@ class OutStandingDoctor extends Component {
     componentDidMount() {
         this.props.loadTopDoctors();
     }
-    handleViewDetailDoctor = (doctor) => {
-        console.log("view info doctor: ", doctor);
-    };
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevProps.topDoctorsRedux !== this.props.topDoctorsRedux) {
             this.setState({
@@ -29,7 +26,6 @@ class OutStandingDoctor extends Component {
         this.props.history.push(`/detail-doctor/${doctor.id}`);
     };
     render() {
-        console.log("check props doctor: ", this.props.topDoctorsRedux);
         let { language } = this.props;
         let arrDoctors = this.state.arrDoctors;
         return (

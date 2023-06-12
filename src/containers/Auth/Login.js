@@ -29,8 +29,6 @@ class Login extends Component {
         this.setState({
             errMessage: "",
         });
-        console.log(`username: ${this.state.username}`);
-        console.log(`password: ${this.state.password}`);
         try {
             const data = await handleLogin(
                 this.state.username,
@@ -43,10 +41,8 @@ class Login extends Component {
             }
             if (data && data.errCode === 0) {
                 this.props.userLoginSuccess(data.user);
-                console.log("Log in successfully");
             }
         } catch (error) {
-            console.log(error.response.data);
             if (error.response) {
                 if (error.response.data) {
                     this.setState({

@@ -130,10 +130,10 @@ class DoctorExtraInfor extends Component {
                             <div className="payment">
                                 <FormattedMessage id="patient.extra-infor-doctor.payment" />
                                 {extraInfor &&
-                                extraInfor.paymentTypeData &&
+                                extraInfor?.paymentTypeData &&
                                 language === LANGUAGES.VI
-                                    ? extraInfor.paymentTypeData.valueVi
-                                    : extraInfor.paymentTypeData.valueEn}
+                                    ? extraInfor?.paymentTypeData?.valueVi
+                                    : extraInfor?.paymentTypeData?.valueEn}
                             </div>
                             <div className="hide-price">
                                 <span

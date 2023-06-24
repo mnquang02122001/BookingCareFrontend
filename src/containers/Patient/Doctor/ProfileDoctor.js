@@ -62,7 +62,9 @@ class ProfileDoctor extends Component {
                     <div>
                         {time} - {date}
                     </div>
-                    <div>Miễn phí đặt lịch</div>
+                    <div>
+                        <FormattedMessage id="patient.booking-modal.priceBooking" />
+                    </div>
                 </>
             );
         }
@@ -71,10 +73,6 @@ class ProfileDoctor extends Component {
     render() {
         let { dataProfile } = this.state;
         let { language, isShowDescriptionDoctor, dataTime } = this.props;
-        console.log(
-            "🚀 ~ file: ProfileDoctor.js:40 ~ ProfileDoctor ~ render ~ dataTime:",
-            dataTime
-        );
 
         let nameVi = "",
             nameEn = "";
@@ -115,7 +113,7 @@ class ProfileDoctor extends Component {
                     </div>
                 </div>
                 <div className="price">
-                    Giá khám:
+                    <FormattedMessage id="patient.booking-modal.price" />
                     {language === LANGUAGES.VI ? (
                         <NumberFormat
                             value={
@@ -131,7 +129,7 @@ class ProfileDoctor extends Component {
                         <NumberFormat
                             value={
                                 dataProfile?.Doctor_Infor?.priceTypeData
-                                    ?.valueEnn
+                                    ?.valueEn
                             }
                             displayType={"text"}
                             thousandSeparator={true}

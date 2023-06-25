@@ -91,6 +91,10 @@
             "btnCancel": "Cancel",
             "priceBooking": "Free booking",
             "price": "Price: "
+        },
+        "verify-booking": {
+            "success": "Appointment confirmed successfully!",
+            "failed": "Appointment does not exist or has been confirmed!"
         }
     },
     "admin": {

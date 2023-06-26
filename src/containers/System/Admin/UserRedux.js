@@ -395,7 +395,7 @@ class UserRedux extends Component {
                                         htmlFor="previewImg"
                                         className="label-upload"
                                     >
-                                        Tải ảnh{" "}
+                                        <FormattedMessage id="manage-user.upload" />
                                         <i className="fas fa-upload"></i>
                                     </label>
                                     <div

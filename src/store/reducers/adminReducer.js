@@ -13,6 +13,7 @@ const initialState = {
         resPrice: [],
         resPayment: [],
         resProvince: [],
+        resSpecialty: [],
     },
 };
 
@@ -105,6 +106,7 @@ const adminReducer = (state = initialState, action) => {
                 resPrice: [],
                 resPayment: [],
                 resProvince: [],
+                resSpecialty: [],
             };
             return {
                 ...state,

@@ -52,11 +52,13 @@
         "role": "Vai trò",
         "image": "Ảnh đại diện",
         "save": "Lưu người dùng",
-        "edit": "Lưu thay đổi"
+        "edit": "Lưu thay đổi",
+        "upload": "Tải ảnh"
     },
     "homepage": {
         "outstanding-doctor": "Bác sĩ nổi bật tuần qua",
-        "more-infor": "Xem thêm"
+        "more-infor": "Xem thêm",
+        "popular-specialty": "Chuyên khoa phổ biến"
     },
     "manage-schedule": {
         "title": "Quản lý kế hoạch khám bệnh của bác sĩ",
@@ -109,7 +111,9 @@
             "province": "Tỉnh thành",
             "nameClinic": "Tên phòng khám",
             "addressClinic": "Địa chỉ phòng khám",
-            "note": "Ghi chú"
+            "note": "Ghi chú",
+            "specialty": "Chọn chuyên khoa",
+            "clinic": "Chọn phòng khám"
         }
     }
 }

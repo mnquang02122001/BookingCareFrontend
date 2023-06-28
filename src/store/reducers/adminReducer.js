@@ -107,6 +107,7 @@ const adminReducer = (state = initialState, action) => {
                 resPayment: [],
                 resProvince: [],
                 resSpecialty: [],
+                resClinic: [],
             };
             return {
                 ...state,

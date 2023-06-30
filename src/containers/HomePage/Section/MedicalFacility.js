@@ -4,6 +4,7 @@ import "./MedicalFacility.scss";
 import Slider from "react-slick";
 import { getAllClinics } from "../../../services/userService";
 import { withRouter } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 class MedicalFacility extends Component {
     constructor(props) {
         super(props);
@@ -29,9 +30,11 @@ class MedicalFacility extends Component {
                 <div className="section-container">
                     <div className="section-header">
                         <span className="title-section">
-                            Cơ sở y tế nổi bật
+                            <FormattedMessage id="homepage.popular-clinic" />
                         </span>
-                        <button className="btn-section">Xem thêm</button>
+                        <button className="btn-section">
+                            <FormattedMessage id="homepage.more-infor" />
+                        </button>
                     </div>
                     <div className="section-body">
                         <Slider {...this.props.settings}>

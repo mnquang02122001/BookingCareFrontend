@@ -59,7 +59,10 @@
     "homepage": {
         "outstanding-doctor": "Last week's featured doctor",
         "more-infor": "More Infor",
-        "popular-specialty": "Popular specialties"
+        "popular-specialty": "Popular specialties",
+        "popular-clinic": "Popular clinics",
+        "handbook": "Handbook",
+        "media": "What the media say about BookingCare"
     },
     "manage-schedule": {
         "title": "Manage doctor's examination plan",
@@ -115,6 +118,19 @@
             "note": "Note",
             "specialty": "Specialty",
             "clinic": "Clinic"
+        },
+        "manage-specialty": {
+            "manage": "Manage specialties",
+            "name": "Specialty's name",
+            "avatar": "Specialty's image",
+            "save": "Save"
+        },
+        "manage-clinic": {
+            "manage": "Manage clinics",
+            "name": "Clinic's name",
+            "avatar": "Clinic's image",
+            "address": "Clinic's address",
+            "save": "Save"
         }
     }
 }

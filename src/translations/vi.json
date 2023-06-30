@@ -59,7 +59,10 @@
     "homepage": {
         "outstanding-doctor": "Bác sĩ nổi bật tuần qua",
         "more-infor": "Xem thêm",
-        "popular-specialty": "Chuyên khoa phổ biến"
+        "popular-specialty": "Chuyên khoa phổ biến",
+        "popular-clinic": "Cơ sở y tế nổi bật",
+        "handbook": "Cẩm nang",
+        "media": "Truyền thông nói gì về BookingCare"
     },
     "manage-schedule": {
         "title": "Quản lý kế hoạch khám bệnh của bác sĩ",
@@ -115,6 +118,19 @@
             "note": "Ghi chú",
             "specialty": "Chọn chuyên khoa",
             "clinic": "Chọn phòng khám"
+        },
+        "manage-specialty": {
+            "manage": "Quản lý chuyên khoa",
+            "name": "Tên chuyên khoa",
+            "avatar": "Ảnh chuyên khoa",
+            "save": "Lưu"
+        },
+        "manage-clinic": {
+            "manage": "Quản lý phòng khám",
+            "name": "Tên phòng khám",
+            "avatar": "Ảnh phòng khám",
+            "address": "Địa chỉ phòng khám",
+            "save": "Lưu"
         }
     }
 }

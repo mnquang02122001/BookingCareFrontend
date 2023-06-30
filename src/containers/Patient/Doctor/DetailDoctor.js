@@ -6,12 +6,14 @@ import { getDetailInforDoctor } from "../../../services/userService";
 import { LANGUAGES } from "../../../utils";
 import DoctorSchedule from "./DoctorSchedule";
 import DoctorExtraInfor from "./DoctorExtraInfor";
+import LoadingOverlay from "react-loading-overlay";
 class DetailDoctor extends Component {
     constructor(props) {
         super(props);
         this.state = {
             detailDoctor: {},
             currentDoctorId: -1,
+            // isShowLoading: false,
         };
     }
     async componentDidMount() {

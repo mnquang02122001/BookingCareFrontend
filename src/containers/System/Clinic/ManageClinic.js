@@ -67,10 +67,14 @@ class ManageClinic extends Component {
     render() {
         return (
             <div className="manage-specialty-container">
-                <div className="ms-title">Quản lý phòng khám</div>
+                <div className="ms-title">
+                    <FormattedMessage id="admin.manage-clinic.manage" />
+                </div>
                 <div className="add-new-specialty row">
                     <div className="col-6 form-group">
-                        <label>Tên phòng khám</label>
+                        <label>
+                            <FormattedMessage id="admin.manage-clinic.name" />
+                        </label>
                         <input
                             type="text"
                             className="form-control"
@@ -81,7 +85,9 @@ class ManageClinic extends Component {
                         />
                     </div>
                     <div className="col-6 form-group">
-                        <label>Ảnh phòng khám</label>
+                        <label>
+                            <FormattedMessage id="admin.manage-clinic.avatar" />
+                        </label>
                         <input
                             type="file"
                             className="form-control-file"
@@ -91,7 +97,9 @@ class ManageClinic extends Component {
                         />
                     </div>
                     <div className="col-6 form-group">
-                        <label>Địa chỉ phòng khám</label>
+                        <label>
+                            <FormattedMessage id="admin.manage-clinic.address" />
+                        </label>
                         <input
                             type="text"
                             className="form-control"
@@ -114,7 +122,7 @@ class ManageClinic extends Component {
                             className="btn-save-specialty"
                             onClick={() => this.handleSaveNewClinic()}
                         >
-                            Save
+                            <FormattedMessage id="admin.manage-clinic.save" />
                         </button>
                     </div>
                 </div>

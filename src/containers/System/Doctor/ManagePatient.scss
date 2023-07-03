@@ -6,10 +6,11 @@ div._loading_overlay_wrapper {
 }
 .manage-patient-container {
     .m-p-title {
-        font-size: 15px;
-        margin: 10px 0;
+        font-size: 17px;
+        margin: 15px 0;
         text-align: center;
         text-transform: uppercase;
+        font-weight: 600;
     }
     .manage-patient-body {
         padding: 0 20px;
@@ -35,11 +36,14 @@ div._loading_overlay_wrapper {
                 height: 30px;
                 border-radius: 3px;
                 background-color: orange;
+                &:hover {
+                    opacity: 0.8;
+                }
             }
-            .mp-btn-remedy {
+            .mp-btn-cancel {
                 height: 30px;
                 border-radius: 3px;
-                background-color: #39dca0;
+                background-color: red;
             }
         }
     }

@@ -62,7 +62,7 @@ class RemedyModal extends Component {
                 >
                     <div className="modal-header">
                         <h5 className="modal-title">
-                            Gửi hóa đơn khám bệnh thành công
+                            <FormattedMessage id="doctor.prescription" />
                         </h5>
                         <button
                             type="button"
@@ -76,7 +76,9 @@ class RemedyModal extends Component {
                     <ModalBody>
                         <div className="row">
                             <div className="col-6 form-group">
-                                <label>Email bệnh nhận</label>
+                                <label>
+                                    <FormattedMessage id="doctor.email" />
+                                </label>
                                 <input
                                     type="email"
                                     value={this.state.email}
@@ -87,7 +89,9 @@ class RemedyModal extends Component {
                                 />
                             </div>
                             <div className="col-6 form-group">
-                                <label>Chọn file đơn thuốc</label>
+                                <label>
+                                    <FormattedMessage id="doctor.file" />
+                                </label>
                                 <input
                                     type="file"
                                     className="form-control-file"
@@ -100,10 +104,10 @@ class RemedyModal extends Component {
                     </ModalBody>
                     <ModalFooter>
                         <Button color="primary" onClick={this.handleSendRemedy}>
-                            Send
+                            <FormattedMessage id="doctor.send" />
                         </Button>
                         <Button color="secondary" onClick={closeRemedyModal}>
-                            Cancel
+                            <FormattedMessage id="doctor.cancel" />
                         </Button>
                     </ModalFooter>
                 </Modal>

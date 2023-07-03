@@ -48,7 +48,7 @@ class DetailDoctor extends Component {
         }
         let currentURL =
             +process.env.REACT_APP_IS_LOCALHOST === 0
-                ? "prod"
+                ? process.env.REACT_APP_BACKEND_URL
                 : window.location.href;
         console.log(
             "🚀 ~ file: DetailDoctor.js:51 ~ DetailDoctor ~ render ~ currentURL:",

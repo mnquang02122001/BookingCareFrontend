@@ -132,5 +132,22 @@
             "address": "Clinic's address",
             "save": "Save"
         }
+    },
+    "doctor": {
+        "manage-patient": "Management of medical examination patients",
+        "date": "Choose a date of examination",
+        "no": "No",
+        "time": "Time",
+        "name": "Full name",
+        "address": "Address",
+        "gender": "Gender",
+        "phoneNumber": "Phone number",
+        "actions": "Actions",
+        "confirm": "Confirm",
+        "cancel": "Cancel",
+        "send": "Send",
+        "prescription": "Send medical prescriptions",
+        "email": "Patient's email",
+        "file": "Select the prescription file"
     }
 }

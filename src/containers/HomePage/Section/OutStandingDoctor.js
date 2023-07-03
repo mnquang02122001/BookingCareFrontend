@@ -80,7 +80,13 @@ class OutStandingDoctor extends Component {
                                                             : nameEn}
                                                     </div>
 
-                                                    <div>Cơ Xương Khớp</div>
+                                                    <div>
+                                                        {
+                                                            item?.Doctor_Infor
+                                                                ?.specialtyData
+                                                                ?.name
+                                                        }
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

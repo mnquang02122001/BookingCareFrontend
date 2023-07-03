@@ -80,6 +80,9 @@ const getAllPatientsForDoctor = (data) => {
 const postSendRemedy = (data) => {
     return axios.post("/api/send-remedy", data);
 };
+const cancelAppointment = (bookingId) => {
+    return axios.delete(`/api/cancel-appointment?bookingId=${bookingId}`);
+};
 export {
     handleLogin,
     getAllUsers,
@@ -105,4 +108,5 @@ export {
     getDetailClinicById,
     getAllPatientsForDoctor,
     postSendRemedy,
+    cancelAppointment,
 };

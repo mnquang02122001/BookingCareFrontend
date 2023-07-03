@@ -132,5 +132,22 @@
             "address": "Địa chỉ phòng khám",
             "save": "Lưu"
         }
+    },
+    "doctor": {
+        "manage-patient": "Quản lý bệnh nhân khám bệnh",
+        "date": "Chọn ngày khám",
+        "no": "STT",
+        "time": "Thời gian",
+        "name": "Họ và tên",
+        "address": "Địa chỉ",
+        "gender": "Giới tính",
+        "phoneNumber": "Số điện thoại",
+        "actions": "Hành động",
+        "confirm": "Xác nhận",
+        "cancel": "Hủy",
+        "send": "Gửi",
+        "prescription": "Gửi hóa đơn khám bệnh",
+        "email": "Email bệnh nhận",
+        "file": "Chọn file đơn thuốc"
     }
 }

@@ -6,6 +6,7 @@ import DatePicker from "../../../components/Input/DatePicker";
 import {
     getAllPatientsForDoctor,
     postSendRemedy,
+    cancelAppointment,
 } from "../../../services/userService";
 import moment from "moment";
 import { LANGUAGES } from "../../../utils";
@@ -98,6 +99,21 @@ class ManagePatient extends Component {
             toast.error("Send remedy failed");
         }
     };
+    handleBtnCancel = async (item) => {
+        this.setState({
+            isShowLoading: true,
+        });
+        let res = await cancelAppointment(item.id);
+        this.setState({
+            isShowLoading: false,
+        });
+        if (res && res.errCode === 0) {
+            toast.success("Delete appointment successfully");
+            await this.getDataPatient();
+        } else {
+            toast.error("Delete appointment failed");
+        }
+    };
     render() {
         let { dataPatient, isOpenRemedyModal, dataModal } = this.state;
         let { language } = this.props;
@@ -110,11 +126,13 @@ class ManagePatient extends Component {
                 >
                     <div className="manage-patient-container">
                         <div className="m-p-title">
-                            Quản lý bệnh nhân khám bệnh
+                            <FormattedMessage id="doctor.manage-patient" />
                         </div>
                         <div className="manage-patient-body row">
                             <div className="col-4 form-group">
-                                <label>Chọn ngày khám</label>
+                                <label>
+                                    <FormattedMessage id="doctor.date" />
+                                </label>
                                 <DatePicker
                                     onChange={this.handleOnChangeDatePicker}
                                     className="form-control"
@@ -125,13 +143,27 @@ class ManagePatient extends Component {
                                 <table style={{ width: "100%" }}>
                                     <thead>
                                         <tr>
-                                            <th>STT</th>
-                                            <th>Thời gian</th>
-                                            <th>Họ và tên</th>
-                                            <th>Địa chỉ</th>
-                                            <th>Giới tính</th>
-                                            <th>Số điện thoại</th>
-                                            <th>Actions</th>
+                                            <th>
+                                                <FormattedMessage id="doctor.no" />
+                                            </th>
+                                            <th>
+                                                <FormattedMessage id="doctor.time" />
+                                            </th>
+                                            <th>
+                                                <FormattedMessage id="doctor.name" />
+                                            </th>
+                                            <th>
+                                                <FormattedMessage id="doctor.address" />
+                                            </th>
+                                            <th>
+                                                <FormattedMessage id="doctor.gender" />
+                                            </th>
+                                            <th>
+                                                <FormattedMessage id="doctor.phoneNumber" />
+                                            </th>
+                                            <th>
+                                                <FormattedMessage id="doctor.actions" />
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -189,7 +221,17 @@ class ManagePatient extends Component {
                                                                     )
                                                                 }
                                                             >
-                                                                Xác nhận
+                                                                <FormattedMessage id="doctor.confirm" />
+                                                            </button>
+                                                            <button
+                                                                className="mp-btn-cancel"
+                                                                onClick={() =>
+                                                                    this.handleBtnCancel(
+                                                                        item
+                                                                    )
+                                                                }
+                                                            >
+                                                                <FormattedMessage id="doctor.cancel" />
                                                             </button>
                                                         </td>
                                                     </tr>
